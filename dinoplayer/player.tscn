@@ -1,0 +1,153 @@
+[gd_scene load_steps=21 format=3 uid="uid://chydnshptxcpr"]
+
+[ext_resource type="Texture2D" uid="uid://b8y5pii42fpbk" path="res://dinoplayer/red.png" id="1_0224h"]
+[ext_resource type="Script" path="res://dinoplayer/player.gd" id="1_sov5p"]
+[ext_resource type="AudioStream" uid="uid://dp2mvqdlunvh7" path="res://dinoplayer/jump.mp3" id="3_thl3n"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ndyyo"]
+atlas = ExtResource("1_0224h")
+region = Rect2(408, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_onckg"]
+atlas = ExtResource("1_0224h")
+region = Rect2(432, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i7rty"]
+atlas = ExtResource("1_0224h")
+region = Rect2(456, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mdptv"]
+atlas = ExtResource("1_0224h")
+region = Rect2(480, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_udgri"]
+atlas = ExtResource("1_0224h")
+region = Rect2(504, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_485lq"]
+atlas = ExtResource("1_0224h")
+region = Rect2(528, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8kruq"]
+atlas = ExtResource("1_0224h")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hxd8r"]
+atlas = ExtResource("1_0224h")
+region = Rect2(264, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l8exp"]
+atlas = ExtResource("1_0224h")
+region = Rect2(96, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j26xr"]
+atlas = ExtResource("1_0224h")
+region = Rect2(120, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5763w"]
+atlas = ExtResource("1_0224h")
+region = Rect2(144, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wwlix"]
+atlas = ExtResource("1_0224h")
+region = Rect2(168, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4jo1m"]
+atlas = ExtResource("1_0224h")
+region = Rect2(192, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v123q"]
+atlas = ExtResource("1_0224h")
+region = Rect2(216, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p1fqq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ndyyo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_onckg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i7rty")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mdptv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_udgri")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_485lq")
+}],
+"loop": true,
+"name": &"crouch",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8kruq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hxd8r")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l8exp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j26xr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5763w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wwlix")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4jo1m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v123q")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nrexe"]
+size = Vector2(15, 14.0654)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5oiqa"]
+size = Vector2(16.1875, 13.375)
+
+[node name="player" type="CharacterBody2D"]
+script = ExtResource("1_sov5p")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(8, 8)
+sprite_frames = SubResource("SpriteFrames_p1fqq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.5, 7.336)
+scale = Vector2(8, 7.584)
+shape = SubResource("RectangleShape2D_nrexe")
+debug_color = Color(0.529681, 0.413158, 1, 0.42)
+
+[node name="CrouchCollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(4.75, 6.5)
+scale = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_5oiqa")
+
+[node name="Audiojump" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_thl3n")
