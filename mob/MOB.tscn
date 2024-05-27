@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://cmeaeautrgjfm"]
+
+[ext_resource type="Script" path="res://mob/MOB.gd" id="1_s38m4"]
+[ext_resource type="Texture2D" uid="uid://b4jtlu1r3hhf" path="res://icon.svg" id="2_r0rom"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cv6s3"]
+
+[node name="MOB" type="Area2D"]
+script = ExtResource("1_s38m4")
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+position = Vector2(-10, -10)
+
+[node name="SpriteA" type="Sprite2D" parent="."]
+position = Vector2(-64, -64)
+texture = ExtResource("2_r0rom")
+
+[node name="CollisionA" type="CollisionShape2D" parent="."]
+position = Vector2(-64, -63)
+rotation = -3.14159
+scale = Vector2(5.80234, -5.88032)
+shape = SubResource("CircleShape2D_cv6s3")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenEnabler2D" to="." method="_on_visible_on_screen_enabler_2d_screen_exited"]

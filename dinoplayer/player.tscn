@@ -138,7 +138,7 @@ script = ExtResource("1_sov5p")
 scale = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_p1fqq")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["dinosaurio"]]
 position = Vector2(5, 6)
 scale = Vector2(8, 7.584)
 shape = SubResource("RectangleShape2D_nrexe")
