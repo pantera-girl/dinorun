@@ -1,25 +1,88 @@
-[gd_scene load_steps=4 format=3 uid="uid://cmeaeautrgjfm"]
+[gd_scene load_steps=12 format=3 uid="uid://cmeaeautrgjfm"]
 
 [ext_resource type="Script" path="res://mob/MOB.gd" id="1_s38m4"]
-[ext_resource type="Texture2D" uid="uid://b4jtlu1r3hhf" path="res://icon.svg" id="2_r0rom"]
+[ext_resource type="Texture2D" uid="uid://da4mfx4w01fh2" path="res://mob/spriteghost.png" id="2_ib03a"]
+[ext_resource type="Texture2D" uid="uid://b4j67bu5816bu" path="res://dinoplayer/mushroom.png" id="3_v8wq8"]
+[ext_resource type="Texture2D" uid="uid://bj5a5mpkgj3ku" path="res://dinoplayer/plant.png" id="4_58gej"]
+[ext_resource type="Texture2D" uid="uid://cgtu14osth0lo" path="res://dinoplayer/ball.png" id="5_qfboo"]
+[ext_resource type="Texture2D" uid="uid://b7a2pri33umbw" path="res://dinoplayer/frog.png" id="6_0j1d6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cv6s3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_p6vno"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5afeg"]
+size = Vector2(95, 81)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pj5gc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_85vjr"]
 
 [node name="MOB" type="Area2D"]
 script = ExtResource("1_s38m4")
 
-[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
-position = Vector2(-10, -10)
-
 [node name="SpriteA" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(-64, -64)
-texture = ExtResource("2_r0rom")
+scale = Vector2(10.0671, 9.21962)
+texture = ExtResource("2_ib03a")
 
 [node name="CollisionA" type="CollisionShape2D" parent="."]
-position = Vector2(-64, -63)
-rotation = -3.14159
-scale = Vector2(5.80234, -5.88032)
+visible = false
+position = Vector2(-54, -58)
+rotation = -2.35619
+scale = Vector2(5.86221, -5.9282)
 shape = SubResource("CircleShape2D_cv6s3")
+disabled = true
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[node name="SpriteB" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-64, -64)
+scale = Vector2(4.87193, 5.18087)
+texture = ExtResource("3_v8wq8")
+
+[node name="CollisionB" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(-68, -37)
+scale = Vector2(3.20617, 2.83614)
+shape = SubResource("CircleShape2D_p6vno")
+
+[node name="SpriteC" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-55, -50)
+scale = Vector2(6.35161, 5.04938)
+texture = ExtResource("4_58gej")
+
+[node name="CollisionC" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(-46, -41)
+shape = SubResource("RectangleShape2D_5afeg")
+
+[node name="CollisionD" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(-46, -37)
+scale = Vector2(4.007, 3.62295)
+shape = SubResource("CircleShape2D_pj5gc")
+
+[node name="SpriteD" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-53, -77)
+scale = Vector2(-7.09003, 7.8094)
+texture = ExtResource("5_qfboo")
+
+[node name="CollisionE" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(-54, -32)
+scale = Vector2(5.65414, -3.86837)
+shape = SubResource("CircleShape2D_85vjr")
+
+[node name="SpriteE" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-55, -62)
+scale = Vector2(3.57687, 4.0699)
+texture = ExtResource("6_0j1d6")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
-[connection signal="screen_exited" from="VisibleOnScreenEnabler2D" to="." method="_on_visible_on_screen_enabler_2d_screen_exited"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
