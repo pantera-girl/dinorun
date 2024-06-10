@@ -39,13 +39,13 @@ disabled = true
 
 [node name="SpriteB" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(-64, -64)
+position = Vector2(-54, -100)
 scale = Vector2(4.87193, 5.18087)
 texture = ExtResource("3_v8wq8")
 
 [node name="CollisionB" type="CollisionShape2D" parent="."]
 visible = false
-position = Vector2(-68, -37)
+position = Vector2(-54, -69)
 scale = Vector2(3.20617, 2.83614)
 shape = SubResource("CircleShape2D_p6vno")
 
