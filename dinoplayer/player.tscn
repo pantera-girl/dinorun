@@ -116,10 +116,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nrexe"]
-size = Vector2(8.25, 17.5369)
+size = Vector2(7.125, 17.2073)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5oiqa"]
-size = Vector2(16.125, 9.25)
+size = Vector2(11.875, 9.25)
 
 [node name="player" type="CharacterBody2D" groups=["dinosaurio"]]
 script = ExtResource("1_sov5p")
@@ -129,18 +129,19 @@ position = Vector2(-19, 6)
 scale = Vector2(1.84563, 1.88569)
 sprite_frames = SubResource("SpriteFrames_p1fqq")
 animation = &"crouch"
-frame_progress = 0.626611
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["dinosaurio"]]
-position = Vector2(-0.999998, 6)
+position = Vector2(-5.5, 7.24996)
 scale = Vector2(8, 7.584)
 shape = SubResource("RectangleShape2D_nrexe")
+disabled = true
 debug_color = Color(0.529681, 0.413158, 1, 0.42)
 
 [node name="CrouchCollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2(4.5, 36)
+position = Vector2(-24, 35)
 scale = Vector2(8, 8)
 shape = SubResource("RectangleShape2D_5oiqa")
+disabled = true
 
 [node name="Audiojump" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_thl3n")

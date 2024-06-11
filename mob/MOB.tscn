@@ -17,21 +17,22 @@ size = Vector2(95, 81)
 [sub_resource type="CircleShape2D" id="CircleShape2D_pj5gc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_85vjr"]
+radius = 9.74112
 
 [node name="MOB" type="Area2D"]
 script = ExtResource("1_s38m4")
 
 [node name="SpriteA" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(-64, -64)
+position = Vector2(-10, -266)
 scale = Vector2(10.0671, 9.21962)
 texture = ExtResource("2_ib03a")
 
 [node name="CollisionA" type="CollisionShape2D" parent="."]
 visible = false
-position = Vector2(-54, -58)
+position = Vector2(-5, -252)
 rotation = -2.35619
-scale = Vector2(5.86221, -5.9282)
+scale = Vector2(7.79344, -8.41269)
 shape = SubResource("CircleShape2D_cv6s3")
 disabled = true
 
@@ -48,39 +49,43 @@ visible = false
 position = Vector2(-54, -69)
 scale = Vector2(3.20617, 2.83614)
 shape = SubResource("CircleShape2D_p6vno")
+disabled = true
 
 [node name="SpriteC" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(-55, -50)
+position = Vector2(-62, -80)
 scale = Vector2(6.35161, 5.04938)
 texture = ExtResource("4_58gej")
 
 [node name="CollisionC" type="CollisionShape2D" parent="."]
 visible = false
-position = Vector2(-46, -41)
+position = Vector2(-54, -69)
 shape = SubResource("RectangleShape2D_5afeg")
-
-[node name="CollisionD" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2(-46, -37)
-scale = Vector2(4.007, 3.62295)
-shape = SubResource("CircleShape2D_pj5gc")
+disabled = true
 
 [node name="SpriteD" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(-53, -77)
+position = Vector2(-54, -115)
 scale = Vector2(-7.09003, 7.8094)
 texture = ExtResource("5_qfboo")
 
+[node name="CollisionD" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(-54, -69)
+scale = Vector2(4.007, 3.62295)
+shape = SubResource("CircleShape2D_pj5gc")
+disabled = true
+
 [node name="CollisionE" type="CollisionShape2D" parent="."]
 visible = false
-position = Vector2(-54, -32)
+position = Vector2(-54, -69)
 scale = Vector2(5.65414, -3.86837)
 shape = SubResource("CircleShape2D_85vjr")
+disabled = true
 
 [node name="SpriteE" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(-55, -62)
+position = Vector2(-54, -99)
 scale = Vector2(3.57687, 4.0699)
 texture = ExtResource("6_0j1d6")
 
